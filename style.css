@@ -1,0 +1,306 @@
+body{font-family: mainfont}
+
+h1,h2,h3,h4,h5,h6 {font-family: tilefont}
+
+footer{font-family: footer;}
+
+body, html {
+	height: 100%;
+	line-height: 1.8;
+	margin:0
+}
+
+html {
+	overflow-x:hidden;
+}
+
+@font-face {
+  font-family: mainfont;
+  src: url("images/raleway.regular.ttf");
+}
+
+@font-face {
+  font-family: tilefont;
+  src: url("images/Bogart-Regular-trial.ttf");
+}
+
+@font-face {
+  font-family: footer;
+  src: url("images/Aracne_Regular.ttf");
+}
+
+/* Navigation Bar */
+
+nav {
+	top: 0;
+	left: 0;
+	position: fixed;
+    width: 100%;
+    z-index: 1;
+	box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+nav li {
+  float: left;
+}
+
+nav li a {
+  display: inline-block;
+  color: #000;
+  text-align: center;
+  padding: 15px 16px;
+  text-decoration: none;
+}
+
+nav li a:hover {
+  background-color: #CCCCCC;
+}
+
+nav a:hover {
+	background-color: #f1f1f1;
+}
+
+/* Big Background Image */
+
+.bgimg {
+  background-position: center;
+  background-size: cover;
+  background-image: url("images/Ship on Stormy Seas.jpg");
+  min-height: 100%;
+  filter: grayscale(50%);
+}
+
+.fstile {
+	font-size: 72px;
+}
+
+.sdtile {
+	font-size: 26px;
+}
+
+hgroup {
+	padding:48px;
+	position:absolute;
+	top:50%;
+	left:0%;
+	transform:translate(0%,-50%);
+	color:#fff;
+	font-family: tilefont;
+}
+
+.button {
+	color: #000;
+    background-color: #fff;
+	padding: 12px 24px;
+	margin-top: 16px;
+	font-size: 18px;
+	opacity: 0.60;
+    display: inline-block;
+	vertical-align: middle;
+	text-decoration: none;
+	text-align: center;
+}
+
+.button:hover {
+	color:#000;
+	background-color:#ccc;
+}
+
+.updateinfo {
+	color:#757575;
+	padding: 24px 48px;
+	position:absolute;
+	left:0;
+	bottom:0;
+}
+
+/* Body Section */
+
+.whitecard {
+	padding: 128px 16px;
+	text-align: center;
+}
+
+.whitecard:after, .whitecard:before {
+	content:"";
+	display:table;
+	clear:both;
+}
+
+.graycard {
+	padding: 128px 16px;
+	text-align: center;
+	color:#000;
+	background-color:#f1f1f1
+}
+
+.graycard:after, .graycard:before {
+	content:"";
+	display:table;
+	clear:both;
+}
+
+.darkcard {
+	padding: 64px;
+	text-align: center;
+	color:#fff;
+	background-color:#616161;
+}
+
+.darkcard:after, .draycard:before {
+	content:"";
+	display:table;
+	clear:both;
+}
+
+footer {
+	color:#fff;
+	background-color:#000;
+	width:auto;
+	text-align:center;
+	padding-top:64px;
+	padding-bottom:64px;
+	letter-spacing:2px;
+}
+
+/* Content Section */
+
+.container {
+	margin-top: 64px;
+}
+
+.halfblock {
+	float:left;
+	width:50%;
+}
+
+.quarter {
+	float:left;
+	width: 24.9%;
+}
+
+.pjblock {
+	border: 1px solid #ccc;
+	margin: 0 8px;
+}
+
+.pjblock:hover {
+ 	border: 1px solid #777;
+}
+
+.pjblock img {
+	width: 100%;
+	height: auto;
+}
+
+.pjdesc {
+	padding: 15px;
+	text-align: center;
+}
+
+.gyrow {
+	margin-top: 64px;
+}
+
+.gyblock {
+	margin: 0 8px;
+}
+
+.gyhover:hover {
+	opacity:0.60;
+}
+
+/* Aside Music Player */
+
+aside a {
+	width: 700px;
+	height: 300px;
+	position: fixed;
+	right: -717px;
+	padding: 15px;
+	transition: 0.3s;
+	border-radius: 8px 0 0 8px;
+}
+
+aside a:hover {
+	right: 0;
+}
+
+#musicplayer {
+  top: 210px;
+  background-color: #737373;
+}
+
+/* Responsive Web Design */
+
+@media only screen and (min-width: 375px) { /* iPhone 12 mini */
+	nav li a {
+		padding: 15px 10px;
+	}
+	.fstile {
+		font-size: 54px;
+	}
+	.whitecard, .graycard {
+		padding: 48px;
+	}
+	.whitecard p {
+		margin-left:0px;
+	}
+	.container {
+		margin-top: 0px;
+	}
+	.quarter, .halfblock {
+		width: 100%;
+		margin-top: 32px;
+	}
+}
+
+@media only screen and (min-width: 768px) { /* iPad mini */
+	.fstile {
+		font-size: 72px;
+	}
+	.whitecard, .graycard {
+		padding: 48px;
+	}
+	.whitecard p {
+		margin-left:0px;
+	}
+	.container {
+		margin-top: 0px;
+	}
+	.quarter, .halfblock {
+		width: 50%;
+		margin-top: 32px;
+	}
+}
+
+@media only screen and (min-width: 1024px) { /* iPad Pro 12.9-inch */
+	.fstile {
+		font-size: 72px;
+	}
+	.whitecard, .graycard {
+		padding: 128px 23px;
+	}
+	.whitecard p {
+		margin-left:25px;
+	}
+	.container {
+		margin-top: 64px;
+	}
+	.quarter {
+		width: 24.9%;
+		margin-top: 0px;
+	} 
+	.halfblock {
+		width: 50%;
+		margin-top: 0px;
+	}
+}
