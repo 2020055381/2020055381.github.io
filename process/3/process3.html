@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8">
+<title>Model Training</title>
+<link rel="stylesheet" href="reset.css" />
+<link rel="stylesheet" href="process3.css" />
+<link rel="icon" href="images/broccoli.ico" type="image/x-icon"/>
+</head>
+
+<body>
+<header>
+    <hgroup>
+        <h1>Model Training</h1>
+        <h2>Let me show you what I’ve accomplished.</h2>
+    </hgroup>
+    <nav>
+        <ul>
+            <li><a href="#s1">Experimental Setup</a></li>
+            <li><a href="#s2">Model Training</a></li>
+            <li><a href="#s3">Reviews</a></li>
+        </ul>
+    </nav>
+</header>
+<article>
+    <section id = "s1">
+        <h3>Experimental Setup</h3>
+        <p>For experimentation, the <a href="https://github.com/pytorch/pytorch/releases">PyTorch 2.2.2</a> deep learning framework was employed. The experimental setup featured a 12th Gen Intel(R) Core(TM) i7-12700H 2.30 GHz processor, 16 GB of memory, and the Windows 11 23H2 operating system. Training acceleration utilized an NVIDIA GeForce RTX 3060. </p>
+        <div class="table-container">
+            <table>
+                <caption>
+                Experiment Configuration Environment
+                </caption>
+                <thead>
+                    <tr>
+                        <th>Configuration</th>
+                        <th>Name</th>
+                        <th>Specific Information</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="4">Hardware Environment</td>
+                        <td>CPU</td>
+                        <td>i7-12700H</td>
+                    </tr>
+                    <tr>
+                        <td>GPU</td>
+                        <td>RTX 3060</td>
+                    </tr>
+                    <tr>
+                        <td>VRAM</td>
+                        <td>128 MB</td>
+                    </tr>
+                    <tr>
+                        <td>Memory</td>
+                        <td>16 GB</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="5">Software Environment</td>
+                        <td>Operating System</td>
+                        <td>Windows 11</td>
+                    </tr>
+                    <tr>
+                        <td>Python Version</td>
+                        <td>3.11.4</td>
+                    </tr>
+                    <tr>
+                        <td>PyTorch Version</td>
+                        <td>2.2.2</td>
+                    </tr>
+                    <tr>
+                        <td>CUDA Version</td>
+                        <td>12.4</td>
+                    </tr>
+                    <tr>
+                        <td>cuDNN Version</td>
+                        <td>9.1.0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>Consistent hyperparameters were applied throughout the training process across all experiments. Table 4-2 displays the precise hyperparameters employed during the training process. The Adam optimizer was employed with an initial learning rate of 0.01, a momentum parameter of 0.937, a weight decay of 0.0005, and a warmup learning rate for the first three epochs to mitigate early-stage overfitting. After the warm-up phase, cosine annealing scheduling was employed to adjust the learning rate. Training was occurred for over 100 epochs, with image pixel size set to 640 × 640 for both training and testing.</p>
+        <div class="table-container">
+            <table>
+                <caption>
+                Hyperparametric Configuration
+                </caption>
+                <thead>
+                    <tr>
+                        <th>Hyperparameters</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Learning Rate</td>
+                        <td>0.01</td>
+                    </tr>
+                    <tr>
+                        <td>Image Size</td>
+                        <td>640 × 640</td>
+                    </tr>
+                    <tr>
+                        <td>Momentum</td>
+                        <td>0.937</td>
+                    </tr>
+                    <tr>
+                        <td>Optimizer</td>
+                        <td>Adam</td>
+                    </tr>
+                    <tr>
+                        <td>Batch Size</td>
+                        <td>64</td>
+                    </tr>
+                    <tr>
+                        <td>Epoch</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td>Weight Decay</td>
+                        <td>0.0005</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <section id = "s2">
+        <h3>Model Training</h3>
+        <p>To validate the effectiveness of the proposed improved model BiFPN-YOLOv8, the model was trained using the same training set and hyperparameters as the original YOLOv8 model. The Table illustrates the final performance for comparison.</p>
+        <p>The table shows that the mAP50 for the YOLOv8 model is 84.78%. In contrast, the BiFPN-YOLOv8 model achieved 85.5%, an improvement of approximately 0.85%.</p>
+        <div class="table-container">
+            <table>
+                <caption>
+                Performance Comparison of YOLOv8 and BiFPN-YOLOv8.
+                </caption>
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>mAP50 (%)</th>
+                        <th>FLOPs (GB)</th>
+                        <th>FPS (f/s)</th>
+                        <th>F1-Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>YOLOv8</td>
+                        <td>84.78</td>
+                        <td>8.1</td>
+                        <td>140</td>
+                        <td>0.83</td>
+                    </tr>
+                    <tr>
+                        <td>BiFPN-YOLOv8</td>
+                        <td>85.50</td>
+                        <td>8.3</td>
+                        <td>188</td>
+                        <td>0.85</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>The FLOPs of YOLOv8 are 8.1 GB, while those of BiFPN-YOLOv8 are slightly higher at 8.3 GB. This suggests that BiFPN-YOLOv8 is marginally more computationally intensive, necessitating a slightly greater number of floating-point operations.</p>
+        <div class="table-container"> <img src="images/1.png" width="100%" margin="auto"> </div>
+        <p>The F1-Score of YOLOv8 is 0.83, while that of BiFPN-YOLOv8 is slightly higher at 0.85. A higher F1-Score means that the BiFPN-YOLOv8 model is more accurate and comprehensive in predicting positive and negative samples.</p>
+        <div class="table-container"> <img src="images/2.png" width="100%" margin="auto">
+            <p style="text-align: center; font-weight: bold;">The results of YOLOv8 model</p>
+        </div>
+        <div class="table-container"> <img src="images/3.png" width="100%" margin="auto">
+            <p style="text-align: center; font-weight: bold;">The results of BiFPN-YOLOv8 model</p>
+        </div>
+        <p>Additionally, the detection speed (FPS, frames per second) of the models was measured. YOLOv8 achieved a detection speed of 140 frames per second, while BiFPN-YOLOv8 achieved a detection speed of 188 frames per second.</p>
+        <p>Overall, the BiFPN-YOLOv8 model not only improves detection accuracy but also significantly enhances detection speed, demonstrating better performance.</p>
+    </section>
+    <section id = "s3">
+        <h3>Reviews</h3>
+        <div>
+            <p>...</p>
+        </div>
+    </section>
+</article>
+<footer>
+    <p><a href="#">Home</a> | <a href="#">Browse</a> | <a href="#">Search</a> </p>
+    <p><em>Copyright &copy;
+        <time>2024</time>
+        Model Training</em></p>
+</footer>
+</body>
+</html>

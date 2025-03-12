@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="icon" href="images/broccoli.ico" type="image/x-icon">
+<title>Dataset Analysis</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+<link rel="stylesheet" href="gallery.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+<script src="gallery.js"></script>
+</head>
+
+<style>
+body {
+    font-family: sans-serif;
+    font-size: 1.125rem;
+    display: flex;
+    flex-direction: column;
+    max-width: 50rem;
+    margin: 0 auto;
+    padding: 0 0.9375rem;
+}
+small {
+    font-style: italic;
+}
+article {
+    display: flex;
+    flex-direction: column;
+}
+img {
+    max-width: 100%;
+    display: block;
+    align-self: center;
+}
+.switch {
+    align-self: flex-end;
+    margin: 0.9375rem;
+}
+.inner-switch {
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid #555;
+    border-radius: 1.25rem;
+    width: 3.125rem;
+    text-align: center;
+    font-size: 1rem;
+    padding: 0.1875rem;
+    margin-left: 0.3125rem;
+}
+.dark, .dark * {
+    background-color: #222;
+    color: #e6e6e6;
+    border-color: #e6e6e6;
+}
+.card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+</style>
+<body>
+<div class="switch">Dark mode: <span class="inner-switch">OFF</span> </div>
+<h1 class="title">Dataset</h1>
+<br/>
+<img src="images/a.png" alt="">
+<article>
+    <p><br/>
+        I evaluated this model using the Construction Site Safety Image Dataset, consisting of 2801 annotated images. (Roboflow Universe Projects, 2023) </p>
+    <br/>
+</article>
+<h1 class="title">Data Analysis and Visualization</h1>
+<br/>
+<img src="images/b.png" alt="">
+<article>
+    <p><br/>
+        All images in the dataset underwent uniform preprocessing and augmentation procedures to ensure consistency across different stages of model training.<br/>
+        <br/>
+        In data analysis, I visualized the distribution of target box centers and dimensions. For example: <br/>
+        <br/>
+        (a) Histogram illustrating the number of instances for each category; <br/>
+        (b) Distribution of bounding boxes for all data; <br/>
+        (c) Histogram of x and y variables, displaying the spatial distribution of the dataset; <br/>
+        (d) Histogram of width and height variables illustrating the dataset’s distribution. </p>
+    <br/>
+    <br/>
+</article>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script> 
+<script src="script.js"></script>
+</body>
+<script>
+$( ".inner-switch" ).on("click", function() {
+    if( $( "body" ).hasClass( "dark" )) {
+      $( "body" ).removeClass( "dark" );
+      $( ".inner-switch" ).text( "OFF" );
+    } else {
+      $( "body" ).addClass( "dark" );
+      $( ".inner-switch" ).text( "ON" );
+    }
+});
+
+ var a = new FgGallery('.fg-gallery', {
+            cols: 4,
+            style: {
+                border: '10px solid #fff',
+                height: '180px',
+                borderRadius: '5px',
+                boxShadow: '0 2px 10px -5px #858585',
+            }
+        })
+
+        var a = new FgGallery('.ns', {
+            cols: 3,
+            style: {
+                border: '0 solid #fff',
+                height: '240px',
+                borderRadius: '5px',
+            }
+        })
+</script>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8">
+<title>Comparative Experiment</title>
+<link rel="stylesheet" href="reset.css" />
+<link rel="stylesheet" href="process4.css" />
+<link rel="icon" href="images/broccoli.ico" type="image/x-icon"/>
+</head>
+
+<body>
+<header>
+    <nav id="firstMenu">
+        <ul>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">PROJECT</a></li>
+            <li><a href="#">RESULTS</a></li>
+        </ul>
+    </nav>
+    <h1>&nbsp;</h1>
+    <nav id="secondaryMenu">
+        <ul>
+            <li><a href="#">Comparative Experiment</a></li>
+            <li><a href="#">Evaluation</a></li>
+            <li><a href="#">Analysis of Experimental Results</a></li>
+        </ul>
+    </nav>
+</header>
+<article>
+    <section>
+        <h3>Comparative Experiment</h3>
+        <p>As shown in the Table, this experiment trained and compared four different models. The original YOLOv8 model serves as the baseline, with the "-" symbol indicating the inclusion of the fusion module for improvement. The results indicate that the original YOLOv8 model achieved precision, recall, mAP50, and mAP50-95 performances of 89.1%, 89%, 84.78%, and 54.79%, respectively.</p>
+        <div class="table-container">
+            <table>
+                <caption>
+                Comparison of YOLOv8 with three different modules.
+                </caption>
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>P (%)</th>
+                        <th>R (%)</th>
+                        <th>mAP@0.5 (%)</th>
+                        <th>mAP@0.5:0.95 (%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>YOLOv8</td>
+                        <td>0.891</td>
+                        <td>0.89</td>
+                        <td>0.8478</td>
+                        <td>0.5479</td>
+                    </tr>
+                    <tr>
+                        <td>SimAM-YOLOv8</td>
+                        <td>0.909</td>
+                        <td>0.89</td>
+                        <td>0.8398</td>
+                        <td>0.5266</td>
+                    </tr>
+                    <tr>
+                        <td>SEAttention-YOLOv8</td>
+                        <td>0.860</td>
+                        <td>0.86</td>
+                        <td>0.8112</td>
+                        <td>0.5085</td>
+                    </tr>
+                    <tr>
+                        <td>BiFPN-YOLOv8</td>
+                        <td class="highlight">0.962</td>
+                        <td>0.89</td>
+                        <td class="highlight">0.8550</td>
+                        <td class="highlight">0.5565</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>While not every improvement resulted in significant enhancements in these metrics, specifically, only the BiFPN-YOLOv8 model exhibited significant improvements in all aspects. Compared to the baseline model, precision, mAP50, and mAP50-95 improved by 7.97%, 0.85%, and 1.57%, respectively, while recall remained unchanged, further validating the feasibility of the improved model. The results of the comparative experiment indicate that using the combination of improved modules can enhance precision, recall, and mAP values, thereby further optimizing the model's performance.</p>
+    </section>
+    <section>
+        <h3>Evaluation</h3>
+        <p>Deep learning models are often perceived as black-box models, despite their excellent performance across various tasks, understanding their decision-making and reasoning processes poses significant challenges. Understanding the interpretability of deep learning models is crucial for this thesis. Thoroughly exploring the interpretability of deep learning models is essential for intuitively understanding their performance. In this experiment, the YOLOv8 model and the BiFPN-YOLOv8 model were chosen as validation models. Their performance was thoroughly examined by analyzing the confusion matrices of both models. Figure 4-6 illustrates the confusion matrices of the two models.</p>
+        <div class="table-container"> <img src="images/1.png" width="100%" margin="auto"> </div>
+        <p style="text-align: center; font-weight: bold;">Confusion matrix of the YOLOv8 and BiFPN-YOLOv8.<br>
+        </p>
+        <p style="text-align: center;"> (a)	Confusion matrix of YOLOv8.<br>(b) Confusion matrix of BiFPN-YOLOv8.</p>
+</section>
+    <section>
+        <h3>Analysis of Experimental Results</h3>
+        <p>The confusion matrix indicates that the BiFPN-YOLOv8 model outperforms the original YOLOv8 model in all four categories. Detailed analysis reveals that the original YOLOv8 model achieves an accuracy of only 81% for safety helmets and 90% for reflective vests. In contrast, the proposed BiFPN-YOLOv8 model significantly enhances the recognition accuracy of safety helmets and reflective vests, with increases of 4% and 3%, respectively.</p>
+        <p>Below figure provides a more intuitive comparison of the model's detection results. The first image (a) illustrates the detection results of the original YOLOv8 model, while the second image (b) depicts the results of the BiFPN-YOLOv8 model. As shown in figure, in complex backgrounds, the BiFPN-YOLOv8 model accurately identifies all objects, whereas YOLOv8 experiences one missed detection, failing to detect the male figure on the right wearing a partially obscured safety helmet. The original model exhibits significant issues with missed detections in complex backgrounds, possibly due to watermarks or goggles' influence. However, BiFPN-YOLOv8 demonstrates precise target identification in such scenarios, accompanied by enhanced confidence scores.</p>
+        <div class="table-container"> <img src="images/2.png" width="100%" margin="auto"> </div>
+        <p style="text-align: center; font-weight: bold;">Comparison of the detection performance between YOLOv8 (a) and BiFPN-YOLOv8 (b).<br>
+        </p>
+        <p>In summary, compared to YOLOv8, the proposed model shows significantly improved detection performance through strategic enhancements. It is noteworthy that it not only excels in numerical metrics but also demonstrates higher efficacy in detecting targets in real-world complex backgrounds. These improvements represent a significant leap in model functionality, ensuring outstanding performance across different environments and addressing the challenges posed by targets in complex settings.</p>
+    </section>
+</article>
+<footer>
+    <p id = "home"><a href="#">ABOUT</a> | <a href="#">PROJECT</a> | <a href="#">RESULTS</a><br>
+        <em>Copuright &copy;
+        <time>2024</time>
+        Comparative Experiment</em></p>
+</footer>
+</body>
+</html>
